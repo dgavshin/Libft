@@ -86,8 +86,7 @@ int				ft_atoi(const char *str)
 	nbr = 0;
 	sign = 1;
 	tmp = str;
-	while (*tmp == ' ' || *tmp == '\b' || *tmp == '\n' ||
-	*tmp == '\t' || *tmp == '\v' || *tmp == '\f' || *tmp == '\r')
+	while (ft_isspace(*tmp))
 		tmp++;
 	if (*tmp == '-' || *tmp == '+')
 		sign = (*(tmp++) == '-' ? -1 : 1);

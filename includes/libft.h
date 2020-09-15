@@ -6,7 +6,7 @@
 /*   By: acyrenna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 13:43:19 by acyrenna          #+#    #+#             */
-/*   Updated: 2020/09/14 00:34:33 by acyrenna         ###   ########.fr       */
+/*   Updated: 2020/09/15 11:20:32 by acyrenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void				*ft_realloc(void *ptr, size_t size);
 void				ft_memdel(void **ap);
 int					ft_chrcmp(char c1, char c2);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
+long				ft_atol(char *str, int *errno);
 int					ft_atoi(const char *str);
 int					ft_atoi_base(const char *str, size_t base);
 int					ft_strequ(char const *s1, char const *s2);

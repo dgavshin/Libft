@@ -6,7 +6,7 @@
 #    By: acyrenna <acyrenna@school21.ru>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/15 10:56:29 by acyrenna          #+#    #+#              #
-#    Updated: 2020/09/15 10:56:30 by acyrenna         ###   ########.fr        #
+#    Updated: 2020/09/15 11:21:11 by acyrenna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRCS = 			ft_abs.c ft_atoi.c ft_bzero.c ft_chrcmp.c ft_isalnum.c ft_isalpha.c \
 				ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c \
 				ft_tolower.c ft_toupper.c ft_memcpy.c ft_isupper.c ft_strndigc.c \
 				ft_atoi_base.c ft_range.c ft_power.c ft_realloc.c ft_lstcreate.c get_next_line.c \
-				ft_lstlast.c ft_lstfirst.c ft_strnchr.c ft_strrev.c
+				ft_lstlast.c ft_lstfirst.c ft_strnchr.c ft_strrev.c ft_atol.c
 
 PRINTF_SRCS =	ft_get_nb_size.c ft_power_l.c ft_itoa_base.c  ft_ltoa_base.c  \
 				write.c flags.c float.c ft_printf.c handle_chars.c handle_number.c \

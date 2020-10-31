@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME =			libft.a
-ECHO =			/usr/bin/echo -ne
+ECHO =			echo
 CC =			clang
 CFLAGS =		-g -Wall -Werror -Wextra
 

@@ -27,6 +27,13 @@ typedef struct		s_list
 	struct s_list	*prev;
 }					t_list;
 
+typedef struct		s_dscptr
+{
+	int				size;
+	int				capability;
+	char			*buffer;
+}					t_dscptr;
+
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				*ft_memcpy(void *restrict dest,
@@ -80,7 +87,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
-char				*ft_strtrim(char const *s);
+char				*ft_strtrim(char const *s1, const char *set);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strcat(char *restrict s1, const char *restrict s2);

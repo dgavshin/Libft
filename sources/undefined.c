@@ -50,7 +50,7 @@ int			handle_invalid(const char *format, size_t *printed)
 	skipped = 0;
 	if (*format == '%')
 	{
-		tmp = ft_strtrim(format);
+		tmp = ft_strtrim(format, " \t\n\b");
 		if (ft_strlen(tmp) == 1)
 		{
 			ft_strdel(&tmp);

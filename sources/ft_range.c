@@ -18,9 +18,10 @@ int		*ft_range(int min, int max)
 	int		i;
 
 	i = 0;
-	arr = (int*)malloc(sizeof(*arr) * (max - min));
-	if (min >= max)
-		return (0);
+	if (max <= min)
+		return (NULL);
+	if (!(arr = (int*)malloc(sizeof(int) * (max - min))))
+		return (NULL);
 	if (!arr)
 		return (0);
 	while (min < max)

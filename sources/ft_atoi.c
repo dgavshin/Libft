@@ -76,16 +76,16 @@ static int		check_bounds(const char *str, int sign)
 	return ((sign == -1) ? check_lower_bound(tmp) : check_upper_bound(tmp));
 }
 
-int				ft_atoi(const char *str)
+int				ft_atoi(const char *tmp)
 {
-	const char	*tmp;
 	int			sign;
 	int			nbr;
 	int			error;
 
 	nbr = 0;
 	sign = 1;
-	tmp = str;
+	if (!tmp)
+		return (0);
 	while (ft_isspace(*tmp))
 		tmp++;
 	if (*tmp == '-' || *tmp == '+')

@@ -15,7 +15,6 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdlib.h>
-# include "ft_printf.h"
 
 # define BUFF_SIZE 1024
 
@@ -103,6 +102,8 @@ char				*ft_strstr(const char *str, const char *to_find);
 char				*ft_strnstr(const char *str, const char *tofind, size_t n);
 char				*ft_strnew(size_t size);
 
+unsigned long		ft_btol(unsigned long big);
+
 size_t				ft_power(int n, int p);
 size_t				ft_strisize(int n);
 size_t				ft_strlcat(char *restrict dest,
@@ -118,8 +119,10 @@ void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+void 				ft_lstfree(void *e, size_t size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int					get_next_line(const int fd, char **line);
 int					ft_printf(const char *format, ...);
+int					ft_dprintf(int fd, const char *format, ...);
 #endif

@@ -19,7 +19,7 @@ int			is_valid_modificator(char mod)
 	return (0);
 }
 
-int			handle_percent(const char *format, size_t *printed)
+int			handle_percent(int fd, const char *format, size_t *printed)
 {
 	int	skipped;
 
@@ -34,7 +34,7 @@ int			handle_percent(const char *format, size_t *printed)
 	}
 	if (*format == '%')
 	{
-		*printed += cputchar('%');
+		*printed += cputchar(fd, '%');
 		skipped++;
 	}
 	if (!skipped)
@@ -42,7 +42,7 @@ int			handle_percent(const char *format, size_t *printed)
 	return (skipped + 1);
 }
 
-int			handle_invalid(const char *format, size_t *printed)
+int			handle_invalid(int fd, const char *format, size_t *printed)
 {
 	size_t	skipped;
 	char	*tmp;
@@ -57,11 +57,11 @@ int			handle_invalid(const char *format, size_t *printed)
 			return (1);
 		}
 		ft_strdel(&tmp);
-		skipped = handle_percent(format, printed);
+		skipped = handle_percent(fd, format, printed);
 	}
 	if (!skipped)
 	{
-		*printed += cputchar(*format);
+		*printed += cputchar(fd, *format);
 		skipped++;
 	}
 	return (skipped);

@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_btol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acyrenna <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: acyrenna <acyrenna@school21.ru>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 13:16:27 by acyrenna          #+#    #+#             */
-/*   Updated: 2019/09/16 13:19:37 by acyrenna         ###   ########.fr       */
+/*   Created: 2021/01/09 17:27:17 by acyrenna          #+#    #+#             */
+/*   Updated: 2021/01/09 17:27:19 by acyrenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+unsigned long	ft_btol(unsigned long big)
 {
-	void	*area;
+	u_int32_t b0;
+	u_int32_t b1;
+	u_int32_t b2;
+	u_int32_t b3;
 
-	if (!(area = malloc(size)))
-		return (NULL);
-	ft_bzero(area, size);
-	return (area);
+	b0 = (big & 0x000000ff) << 24u;
+	b1 = (big & 0x0000ff00) << 8u;
+	b2 = (big & 0x00ff0000) >> 8u;
+	b3 = (big & 0xff000000) >> 24u;
+	return (b0 | b1 | b2 | b3);
 }

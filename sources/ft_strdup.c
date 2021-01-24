@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s1)
 
 	if (!(len = ft_strlen(s1)))
 		return (NULL);
-	if (!(tmp = (char *)ft_memalloc(len)))
+	if (!(tmp = (char *)ft_memalloc(len + 1)))
 		return (NULL);
 	ft_memcpy((void *)tmp, (void *)s1, len);
 	return (tmp);

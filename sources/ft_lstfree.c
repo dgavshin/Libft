@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_lstfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acyrenna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 13:16:27 by acyrenna          #+#    #+#             */
-/*   Updated: 2019/09/16 13:19:37 by acyrenna         ###   ########.fr       */
+/*   Created: 2020/04/30 12:58:15 by acyrenna          #+#    #+#             */
+/*   Updated: 2021/01/24 14:10:36 by acyrenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+void	ft_lstfree(void *e, size_t size)
 {
-	void	*area;
-
-	if (!(area = malloc(size)))
-		return (NULL);
-	ft_bzero(area, size);
-	return (area);
+	if (size > 0)
+		free(e);
 }

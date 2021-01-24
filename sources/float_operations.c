@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   float_operations.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jirwin <jirwin@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: jirwin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 11:30:19 by jirwin            #+#    #+#             */
 /*   Updated: 2020/05/15 11:30:20 by jirwin           ###   ########.fr       */

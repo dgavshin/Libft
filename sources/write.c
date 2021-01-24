@@ -12,16 +12,16 @@
 
 #include "ft_printf.h"
 
-int		cputchar(char c)
+int		cputchar(int fd, char c)
 {
-	write(1, &c, 1);
+	write(fd, &c, 1);
 	return (1);
 }
 
-int		cputstr(const char *str)
+int		cputstr(int fd, const char *str)
 {
 	if (!str)
 		return (0);
-	ft_putstr(str);
+	ft_putstr_fd(str, fd);
 	return (ft_strlen(str));
 }

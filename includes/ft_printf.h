@@ -122,6 +122,7 @@ long double				ft_power_l(long double x, long n);
 ** The stupid content printer
 */
 int						ft_printf(const char *format, ...);
+int						ft_dprintf(int fd, const char *format, ...);
 
 /*
 ** Some specific 'atois' for representing long numbers
@@ -133,9 +134,9 @@ char					*ft_itoa_base(long long value, int base, int l_case);
 /*
 ** Printing functions
 */
-size_t					arg_print(t_argument *arg);
-int						cputchar(char c);
-int						cputstr(const char *str);
+size_t					arg_print(int fd, t_argument *arg);
+int						cputchar(int fd, char c);
+int						cputstr(int fd, const char *str);
 
 /*
 ** Parsing functioncs in formating string
@@ -148,7 +149,8 @@ t_argument				*arg_parse(const char *format);
 /*
 ** Conversations handlers
 */
-int						handle_invalid(const char *format, size_t *printed);
+int						handle_invalid(int fd, const char *format, size_t
+*printed);
 void					handle_pointer(t_argument *arg, va_list *args);
 void					handle_number(t_argument *arg, va_list *args);
 void					handle_chars(t_argument *arg, va_list *args);

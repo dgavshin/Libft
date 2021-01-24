@@ -12,41 +12,43 @@
 
 #include "ft_printf.h"
 
-static void		handle_right(t_argument *arg, size_t *printed, char *field)
+static void		handle_right(int fd, t_argument *arg, size_t *printed, char
+																	*field)
 {
 	if (arg->field_filling == ' ' && field)
-		*printed += cputstr(field);
+		*printed += cputstr(fd, field);
 	if (arg->sign_display)
-		*printed += cputchar(arg->sign_display);
+		*printed += cputchar(fd, arg->sign_display);
 	if (arg->special && arg->afterpoint >= 0)
-		*printed += cputstr(arg->special);
+		*printed += cputstr(fd, arg->special);
 	else if (arg->type == O && arg->special)
-		*printed += cputstr(arg->special);
+		*printed += cputstr(fd, arg->special);
 	if (arg->field_filling == '0' && field)
-		*printed += cputstr(field);
+		*printed += cputstr(fd, field);
 	if ((arg->afterpoint >= 0 || arg->type == F) || !ft_strequ(arg->data, "0"))
-		*printed += cputstr(arg->data);
+		*printed += cputstr(fd, arg->data);
 	if (arg->type == C && arg->data[0] == '\0')
-		*printed += cputchar(0);
+		*printed += cputchar(fd, 0);
 	ft_strdel(&field);
 }
 
-static void		handle_left(t_argument *arg, size_t *printed, char *field)
+static void		handle_left(int fd, t_argument *arg, size_t *printed, char
+*field)
 {
 	if (arg->afterpoint >= 0 || arg->field_size > 0)
 	{
 		if (arg->sign_display)
-			*printed += cputchar(arg->sign_display);
+			*printed += cputchar(fd, arg->sign_display);
 		if (arg->special)
-			*printed += cputstr(arg->special);
-		*printed += cputstr(arg->data);
+			*printed += cputstr(fd, arg->special);
+		*printed += cputstr(fd, arg->data);
 		if (arg->type == C && arg->data[0] == '\0')
-			*printed += cputchar(0);
+			*printed += cputchar(fd, 0);
 	}
 	else if (arg->type == O && arg->special)
-		*printed += cputstr(arg->special);
+		*printed += cputstr(fd, arg->special);
 	if (field)
-		*printed += cputstr(field);
+		*printed += cputstr(fd, field);
 	ft_strdel(&field);
 }
 
@@ -79,7 +81,7 @@ static int		define_precision(t_argument *arg)
 	return (0);
 }
 
-size_t			arg_print(t_argument *arg)
+size_t			arg_print(int fd, t_argument *arg)
 {
 	int		fillsize;
 	char	*field;
@@ -94,8 +96,8 @@ size_t			arg_print(t_argument *arg)
 		field = ft_memset(ft_memalloc(fillsize + 1), arg->field_filling, \
 																	fillsize);
 	if (arg->alignment == RIGHT)
-		handle_right(arg, &printed, field);
+		handle_right(fd, arg, &printed, field);
 	else
-		handle_left(arg, &printed, field);
+		handle_left(fd, arg, &printed, field);
 	return (printed);
 }

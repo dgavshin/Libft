@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   l_ar.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jirwin <jirwin@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: jirwin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 11:37:25 by jirwin            #+#    #+#             */
 /*   Updated: 2020/05/15 11:37:26 by jirwin           ###   ########.fr       */

@@ -15,16 +15,12 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdlib.h>
+# include <limits.h>
+
+# include "ft_stack.h"
+# include "ft_queue.h"
 
 # define BUFF_SIZE 1024
-
-typedef struct		s_list
-{
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-	struct s_list	*prev;
-}					t_list;
 
 typedef struct		s_dscptr
 {
@@ -125,4 +121,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					get_next_line(const int fd, char **line);
 int					ft_printf(const char *format, ...);
 int					ft_dprintf(int fd, const char *format, ...);
+
+void				gexit(char *format, char *f1, char *f2, char *f3);
 #endif

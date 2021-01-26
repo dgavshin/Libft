@@ -14,7 +14,7 @@ cmake_minimum_required(VERSION 3.15.3)
 
 project(libft)
 
-set(BUILD_FLAGS "-O3")
+set(BUILD_FLAGS "-O3 -g")
 set(DST_NAME ft)
 set(SRC_DIR ${PROJECT_SOURCE_DIR}/sources/)
 set(INC_DIR ${PROJECT_SOURCE_DIR}/includes/)
@@ -40,7 +40,7 @@ FILE(GLOB_RECURSE LIBFT_HEADERS ${INC_DIR}*.h)
 if (COMPILE_SO)
     add_library(${PROJECT_NAME} SHARED ${LIBFT_SOURCES} ${LIBFT_HEADERS})
 else()
-    add_library(${PROJECT_NAME} STATIC ${LIBFT_SOURCES} sources/ft_lstfree.c)
+    add_library(${PROJECT_NAME} STATIC ${LIBFT_SOURCES})
 endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${INC_DIRS})

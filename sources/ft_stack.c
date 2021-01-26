@@ -12,22 +12,20 @@
 
 #include "libft.h"
 
-void		stack_clean(t_stack *stack)
+void		stack_clean(t_stack *stack, void (*del)(void *, size_t))
 {
-	t_list	*tmp;
-	t_list	*elem;
 	size_t	size;
+	t_list	*lst;
 
-	if ((size = stack->size))
+	if (stack->looped)
 	{
-		elem = stack->head;
+		lst = stack->head;
+		size = stack->size;
 		while (size--)
-		{
-			tmp = elem->next;
-			ft_memdel((void **)&elem);
-			elem = tmp;
-		}
+			del(lst, lst->content_size);
 	}
+	else
+		ft_lstdel(&stack->head, del);
 	ft_memdel((void **)&stack);
 }
 

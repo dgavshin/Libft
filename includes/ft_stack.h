@@ -21,7 +21,7 @@ typedef struct		s_stack
 	t_list			*(*pop)(struct s_stack *stack);
 }					t_stack;
 
-void		stack_clean(t_stack *stack);
+void		stack_clean(t_stack *stack, void (*del)(void *, size_t));
 void		stack_lpush(t_stack *stack, long elem);
 t_stack		*stack_init(char name, t_list *head, unsigned char looped);
 void		stack_push(t_stack *stack, t_list *elem);

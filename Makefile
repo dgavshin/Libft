@@ -6,7 +6,7 @@
 #    By: acyrenna <acyrenna@school21.ru>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/07 23:41:19 by acyrenna          #+#    #+#              #
-#    Updated: 2021/01/09 15:32:37 by acyrenna         ###   ########.fr        #
+#    Updated: 2021/01/26 19:55:19 by acyrenna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ so: cmake_so
 $(NAME): callcmake
 
 callcmake: $(CMAKEDIR) $(CMAKEDIR)Makefile
-	make -C $(CMAKEDIR)
+	make -C $(CMAKEDIR) -j 8
 
 $(CMAKEDIR):
 	mkdir -p $(CMAKEDIR)

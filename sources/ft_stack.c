@@ -21,8 +21,11 @@ void		stack_clean(t_stack *stack, void (*del)(void *, size_t))
 	{
 		lst = stack->head;
 		size = stack->size;
-		while (size--)
+		while (lst && size--)
+		{
 			del(lst, lst->content_size);
+			lst = lst->next;
+		}
 	}
 	else
 		ft_lstdel(&stack->head, del);

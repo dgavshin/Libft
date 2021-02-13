@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_queue.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acyrenna <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/13 15:18:41 by acyrenna          #+#    #+#             */
+/*   Updated: 2021/02/13 15:21:16 by acyrenna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void		queue_push(t_queue *queue, t_list *elem)
@@ -49,7 +61,7 @@ t_list		*queue_pop(t_queue *queue)
 	return (elem);
 }
 
-void 		queue_clean(t_queue *queue)
+void		queue_clean(t_queue *queue)
 {
 	t_list	*tmp;
 	t_list	*elem;

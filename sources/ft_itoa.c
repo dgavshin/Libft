@@ -37,7 +37,7 @@ char		*ft_itoa(int n)
 	alpha = NULL;
 	len = get_len(n);
 	nbr = (n < 0 ? -n : n);
-	if (!(alpha = (char *)malloc(sizeof(char) * len + 1)))
+	if (!(alpha = (char *)ft_memalloc(sizeof(char) * len + 1)))
 		return (NULL);
 	alpha[len--] = '\0';
 	while (len >= 0)

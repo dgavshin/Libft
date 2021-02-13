@@ -14,7 +14,7 @@ cmake_minimum_required(VERSION 3.15.3)
 
 project(libft)
 
-set(BUILD_FLAGS "-O3 -g")
+set(BUILD_FLAGS "-O3 -g -Wall -Werror -Wextra")
 set(DST_NAME ft)
 set(SRC_DIR ${PROJECT_SOURCE_DIR}/sources/)
 set(INC_DIR ${PROJECT_SOURCE_DIR}/includes/)

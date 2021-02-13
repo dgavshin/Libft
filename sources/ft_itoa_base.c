@@ -26,9 +26,7 @@ char	*ft_itoa_base(long long int value, int base, int radix_case)
 	hex = radix_case ? RADIXHI : RADIXLO;
 	while (n /= base)
 		i++;
-	if ((s = (char*)malloc(sizeof(char) * i + 1)) == 0 || (base < 2 ||
-															base > 16))
-		return (NULL);
+	s = (char*)ft_memalloc(sizeof(char) * i + 1);
 	s[i] = 0;
 	if (value < 0 && base == 10)
 		s[0] = '-';

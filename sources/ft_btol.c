@@ -19,9 +19,9 @@ unsigned long	ft_btol(unsigned long big)
 	u_int32_t b2;
 	u_int32_t b3;
 
-	b0 = (big & 0x000000ff) << 24u;
-	b1 = (big & 0x0000ff00) << 8u;
-	b2 = (big & 0x00ff0000) >> 8u;
-	b3 = (big & 0xff000000) >> 24u;
+	b0 = (big & 0x000000ff) << 24;
+	b1 = (big & 0x0000ff00) << 8;
+	b2 = (big & 0x00ff0000) >> 8;
+	b3 = (big & 0xff000000) >> 24;
 	return (b0 | b1 | b2 | b3);
 }

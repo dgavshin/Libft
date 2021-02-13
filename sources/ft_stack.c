@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   ft_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acyrenna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:51:16 by acyrenna          #+#    #+#             */
-/*   Updated: 2020/09/14 00:57:03 by acyrenna         ###   ########.fr       */
+/*   Updated: 2021/02/13 15:17:23 by acyrenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void		stack_push(t_stack *stack, t_list *elem)
 	}
 }
 
-t_list 		*stack_pop(t_stack *stack)
+t_list		*stack_pop(t_stack *stack)
 {
-	t_list 	*elem;
+	t_list	*elem;
 
 	elem = NULL;
 	if (stack && stack->size)
@@ -84,8 +84,8 @@ t_list 		*stack_pop(t_stack *stack)
 
 void		stack_lpush(t_stack *stack, long elem)
 {
-	t_list *l;
-	long 	*content;
+	t_list	*l;
+	long	*content;
 
 	content = (long *)malloc(sizeof(long));
 	*content = elem;

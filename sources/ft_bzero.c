@@ -6,7 +6,7 @@
 /*   By: acyrenna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 13:11:49 by acyrenna          #+#    #+#             */
-/*   Updated: 2019/09/16 13:11:54 by acyrenna         ###   ########.fr       */
+/*   Updated: 2021/02/13 15:19:53 by acyrenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 static int	zero_long_blocks(unsigned long long *dest_l, size_t blocks)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i++ < blocks)
 		*(dest_l++) = 0;
-	return (i - 1);
+	return ((int)i - 1);
 }
 
 static void	zero_char_blocks(unsigned char *dest_c, size_t blocks)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i++ < blocks)
